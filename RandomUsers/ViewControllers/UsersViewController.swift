@@ -43,7 +43,7 @@ class UsersViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailsVC = storyboard.instantiateViewController(withIdentifier: "\(DetailsViewController.self)") as? DetailsViewController else {return}
         detailsVC.userData = userData
-        self.present(detailsVC, animated: true, completion: nil)
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 
