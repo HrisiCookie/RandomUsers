@@ -17,8 +17,7 @@ class UsersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let url = "https://randomuser.me/api/?results=5"
-        httpRequester?.get(from: url)
+        
     }
     
     override func viewDidLoad() {
@@ -27,7 +26,7 @@ class UsersViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.estimatedRowHeight = 92
+        tableView.estimatedRowHeight = 90
         tableView.rowHeight = UITableViewAutomaticDimension
         
         httpRequester = HttpRequester()
@@ -35,7 +34,9 @@ class UsersViewController: UIViewController {
         
 
         self.tableView.register(UINib(nibName:"\(UserTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
-
+        
+        let url = "https://randomuser.me/api/?results=5"
+        httpRequester?.get(from: url)
     }
     
     func showNextVC(userData: ResultsModel) {
@@ -59,9 +60,9 @@ extension UsersViewController: UITableViewDataSource {
         let userCell = tableView.dequeueReusableCell(withIdentifier: "\(UserTableViewCell.self)", for: indexPath) as? UserTableViewCell
         guard let cell = userCell else { return UITableViewCell() }
         
-        let first = array[indexPath.row].name.first.capitalized
-        let last = array[indexPath.row].name.last.capitalized
-        let image = array[indexPath.row].picture.thumbnail.capitalized
+        let first = array[indexPath.row].name.first.uppercased()
+        let last = array[indexPath.row].name.last.uppercased()
+        let image = array[indexPath.row].picture.thumbnail
         let city = array[indexPath.row].location.city.capitalized
 
         cell.populate(firstName: first, lastName: last, image: image, city: city)
@@ -72,7 +73,7 @@ extension UsersViewController: UITableViewDataSource {
 
 extension UsersViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let currentUser = userData else {return}
+        let currentUser = array[indexPath.row]
         showNextVC(userData: currentUser)
     }
 }

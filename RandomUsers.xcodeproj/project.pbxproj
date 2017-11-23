@@ -25,6 +25,7 @@
 		768E7A511FC6355300DC94AA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A501FC6355300DC94AA /* DetailsViewController.swift */; };
 		768E7A541FC641A200DC94AA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A521FC641A200DC94AA /* UserTableViewCell.swift */; };
 		768E7A551FC641A200DC94AA /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768E7A531FC641A200DC94AA /* UserTableViewCell.xib */; };
+		76A992B51FC743BF003C237F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A992B41FC743BF003C237F /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		768E7A501FC6355300DC94AA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		768E7A521FC641A200DC94AA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		768E7A531FC641A200DC94AA /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		76A992B41FC743BF003C237F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		93862213551FA7D65C10A00D /* Pods-RandomUsers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomUsers.release.xcconfig"; path = "Pods/Target Support Files/Pods-RandomUsers/Pods-RandomUsers.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 		768E7A251FC5AD7100DC94AA /* RandomUsers */ = {
 			isa = PBXGroup;
 			children = (
+				76A992B31FC74399003C237F /* Extensions */,
 				768E7A3F1FC5B04000DC94AA /* Models */,
 				768E7A3E1FC5B03B00DC94AA /* Views */,
 				768E7A3D1FC5B03100DC94AA /* ViewControllers */,
@@ -137,6 +140,14 @@
 				768E7A4D1FC5B9D600DC94AA /* PictureModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		76A992B31FC74399003C237F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76A992B41FC743BF003C237F /* UIImageViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		97704E0498FCB64E4F00E5AB /* Pods */ = {
@@ -294,6 +305,7 @@
 				768E7A421FC5B40700DC94AA /* UsersViewController.swift in Sources */,
 				768E7A4C1FC5B9AA00DC94AA /* IdModel.swift in Sources */,
 				768E7A4F1FC5BA9400DC94AA /* HttpRequester.swift in Sources */,
+				76A992B51FC743BF003C237F /* UIImageViewExtension.swift in Sources */,
 				768E7A2F1FC5AD7100DC94AA /* RandomUsers.xcdatamodeld in Sources */,
 				768E7A441FC5B45800DC94AA /* ResponseModel.swift in Sources */,
 				768E7A4E1FC5B9D600DC94AA /* PictureModel.swift in Sources */,
