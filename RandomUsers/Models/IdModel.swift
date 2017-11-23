@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Id: Codable {
-    let name: String
-    let value: String
-}
+//struct Id: Codable {
+//    let name: String
+//    let value: String?
+//}
+

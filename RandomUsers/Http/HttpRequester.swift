@@ -75,7 +75,7 @@ class HttpRequester {
                 
                 let err = try? JSONSerialization.jsonObject(with: responseError, options: .allowFragments)
                 self.handleError(forHttpMethod: httpMethod, with: String(describing: err))
-                self.log(title: "ERROR", with: err ?? "")
+                self.log(title: "ERROR", with: String(describing: err))
             }
         }
         

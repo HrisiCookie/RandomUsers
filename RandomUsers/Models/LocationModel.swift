@@ -12,5 +12,5 @@ struct Location: Codable {
     let street: String
     let city: String
     let state: String
-    let postcode: Int
+//    let postcode: Any
 }

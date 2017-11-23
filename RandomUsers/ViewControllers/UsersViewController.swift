@@ -10,15 +10,65 @@ import UIKit
 
 class UsersViewController: UIViewController {
     var httpRequester: HttpRequester?
-
+    var userData: ResultsModel?
+    var array: [ResultsModel] = []
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let url = "https://randomuser.me/api/?results=5"
+        httpRequester?.get(from: url)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         
         httpRequester = HttpRequester()
         httpRequester?.delegate = self
         
-        let url = "https://randomuser.me/api/"
-        httpRequester?.get(from: url)
+
+        self.tableView.register(UINib(nibName:"\(UserTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
+
+    }
+    
+    func showNextVC(userData: ResultsModel) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailsVC = storyboard.instantiateViewController(withIdentifier: "\(DetailsViewController.self)") as? DetailsViewController else {return}
+        detailsVC.userData = userData
+        self.present(detailsVC, animated: true, completion: nil)
+    }
+}
+
+extension UsersViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return array.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let userCell = tableView.dequeueReusableCell(withIdentifier: "\(UserTableViewCell.self)", for: indexPath) as? UserTableViewCell
+        guard let cell = userCell else { return UITableViewCell() }
+        
+        guard let firstName1 = userData?.name.first,
+            let lastName1 = userData?.name.last else {return UITableViewCell()}
+
+        cell.populate(firstName: firstName1, lastName: lastName1)
+
+        return cell
+    }
+}
+
+extension UsersViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let currentUser = userData else {return}
+        showNextVC(userData: currentUser)
     }
 }
 
@@ -26,8 +76,22 @@ extension UsersViewController: HttpRequesterDelegate {
     func didGetSuccess(with data: Data) {
         let decoder = JSONDecoder()
         do {
-            let response = try decoder.decode(ResponseModel.self, from: data)
-            print("Response!!!: \(response)")
+            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]
+            if let parseJSON = json {
+                let results = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
+                let finalResults = results!["results"]
+                print("Final results: \(finalResults)")
+                do {
+                    let jsonData = try JSONSerialization.data(withJSONObject: finalResults, options: .prettyPrinted)
+                    let decodedResults = try decoder.decode([ResultsModel].self, from: jsonData)
+                    array = decodedResults
+                    print("Count: \(array.count)")
+                    print("Decoded results: \(decodedResults)")
+                } catch {
+                    print("Error: \(error)")
+                }
+            }
+            print("Count: \(array.count)")
         } catch {
             print("ERROR: Can't convert data from JSON")
             print("Error: \(error.localizedDescription)")

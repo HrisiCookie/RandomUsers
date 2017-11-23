@@ -15,6 +15,6 @@ struct ResultsModel: Codable {
     let email: String
     let phone: String
     let cell: String
-    let id: Id
+//    let id: Id
     let picture: Picture
 }
