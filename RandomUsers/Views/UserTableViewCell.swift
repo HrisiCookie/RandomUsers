@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var firstName: UILabel!
-    @IBOutlet weak var lastName: UILabel!
+    
+    @IBOutlet weak var firstNameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +27,11 @@ class UserTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func populate(firstName: String, lastName: String) {
-        self.firstName.text = firstName
-        self.lastName.text = lastName
+    func populate(firstName: String, lastName: String, image: String, city: String) {
+        self.firstNameLabel.text = firstName
+        self.lastNameLabel.text = lastName
+        self.cityLabel.text = city
+        self.userImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: "placeholder"))
     }
     
     override func prepareForReuse() {

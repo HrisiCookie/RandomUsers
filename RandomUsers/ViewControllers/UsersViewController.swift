@@ -27,6 +27,9 @@ class UsersViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.estimatedRowHeight = 92
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         httpRequester = HttpRequester()
         httpRequester?.delegate = self
         
@@ -56,10 +59,12 @@ extension UsersViewController: UITableViewDataSource {
         let userCell = tableView.dequeueReusableCell(withIdentifier: "\(UserTableViewCell.self)", for: indexPath) as? UserTableViewCell
         guard let cell = userCell else { return UITableViewCell() }
         
-        guard let firstName1 = userData?.name.first,
-            let lastName1 = userData?.name.last else {return UITableViewCell()}
+        let first = array[indexPath.row].name.first.capitalized
+        let last = array[indexPath.row].name.last.capitalized
+        let image = array[indexPath.row].picture.thumbnail.capitalized
+        let city = array[indexPath.row].location.city.capitalized
 
-        cell.populate(firstName: firstName1, lastName: lastName1)
+        cell.populate(firstName: first, lastName: last, image: image, city: city)
 
         return cell
     }
@@ -85,6 +90,9 @@ extension UsersViewController: HttpRequesterDelegate {
                     let jsonData = try JSONSerialization.data(withJSONObject: finalResults, options: .prettyPrinted)
                     let decodedResults = try decoder.decode([ResultsModel].self, from: jsonData)
                     array = decodedResults
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                     print("Count: \(array.count)")
                     print("Decoded results: \(decodedResults)")
                 } catch {
