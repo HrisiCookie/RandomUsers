@@ -53,6 +53,7 @@ extension UsersViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("Count: \(array.count)")
         return array.count
     }
     
@@ -82,25 +83,12 @@ extension UsersViewController: HttpRequesterDelegate {
     func didGetSuccess(with data: Data) {
         let decoder = JSONDecoder()
         do {
-            let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any]
-            if let parseJSON = json {
-                let results = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
-                let finalResults = results!["results"]
-                print("Final results: \(finalResults)")
-                do {
-                    let jsonData = try JSONSerialization.data(withJSONObject: finalResults, options: .prettyPrinted)
-                    let decodedResults = try decoder.decode([ResultsModel].self, from: jsonData)
-                    array = decodedResults
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    print("Count: \(array.count)")
-                    print("Decoded results: \(decodedResults)")
-                } catch {
-                    print("Error: \(error)")
-                }
+            let response = try decoder.decode(ResponseModel.self, from: data)
+            print("Response: \(response)")
+            array = response.results
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-            print("Count: \(array.count)")
         } catch {
             print("ERROR: Can't convert data from JSON")
             print("Error: \(error.localizedDescription)")
