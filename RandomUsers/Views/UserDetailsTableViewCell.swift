@@ -30,4 +30,7 @@ class UserDetailsTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
     }
+    
+    @IBAction func onClick(_ sender: Any) {
+    }
 }

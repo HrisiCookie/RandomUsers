@@ -9,15 +9,15 @@
 import UIKit
 import SDWebImage
 
+enum TableSection: Int {
+    case gender = 0
+    case city = 1
+    case street = 2
+    case email = 3
+    case phone = 4
+}
+
 class DetailsViewController: UIViewController {
-    
-    enum TableSection: Int {
-        case gender = 0
-        case city = 1
-        case street = 2
-        case email = 3
-        case phone = 4
-    }
     
     @IBOutlet weak var mainUserInfoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -47,7 +47,6 @@ class DetailsViewController: UIViewController {
         userImage.makeImageCircle()
         
         isMale = userData?.gender == "male" ? true : false
-        // Do any additional setup after loading the view.
     }
 }
 
@@ -90,19 +89,27 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserDetailsTableViewCell") as? UserDetailsTableViewCell else {
             return UITableViewCell()}
+        
+        guard let gender = userData?.gender,
+            let city = userData?.location.city,
+            let street = userData?.location.street,
+            let phone = userData?.phone,
+            let email = userData?.email else {return UITableViewCell()}
 
         if let tableSection = TableSection(rawValue: indexPath.section) {
             switch tableSection {
             case .gender:
-                cell.populate(userInfo: (userData?.gender)!)
+                cell.populate(userInfo: gender)
             case .city:
-                cell.populate(userInfo: (userData?.location.city)!)
+                cell.populate(userInfo: city)
             case .street:
-                cell.populate(userInfo: (userData?.location.street)!)
+                cell.populate(userInfo: street)
             case .phone:
-                cell.populate(userInfo: (userData?.phone)!)
+                cell.populate(userInfo: phone)
+                cell.userInfo.isUserInteractionEnabled = true
             case .email:
-                cell.populate(userInfo: (userData?.email)!)
+                cell.populate(userInfo: email)
+                cell.userInfo.isUserInteractionEnabled = true
             }
         }
         return cell
