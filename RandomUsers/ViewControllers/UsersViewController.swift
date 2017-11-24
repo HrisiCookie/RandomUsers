@@ -35,7 +35,7 @@ class UsersViewController: UIViewController {
 
         self.tableView.register(UINib(nibName:"\(UserTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
         
-        let url = "https://randomuser.me/api/?results=5"
+        let url = "https://randomuser.me/api/?results=10"
         httpRequester?.get(from: url)
     }
     
@@ -67,6 +67,13 @@ extension UsersViewController: UITableViewDataSource {
         let city = array[indexPath.row].location.city.capitalized
 
         cell.populate(firstName: first, lastName: last, image: image, city: city)
+        
+        if indexPath.row == self.array.count - 1 {
+            if array.count < 100 {
+                let url = "https://randomuser.me/api/?results=10"
+                httpRequester?.get(from: url)
+            }
+        }
 
         return cell
     }
@@ -85,7 +92,11 @@ extension UsersViewController: HttpRequesterDelegate {
         do {
             let response = try decoder.decode(ResponseModel.self, from: data)
             print("Response: \(response)")
-            array = response.results
+            if array.count == 0 {
+                array = response.results
+            } else {
+                array.append(contentsOf: response.results)
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
