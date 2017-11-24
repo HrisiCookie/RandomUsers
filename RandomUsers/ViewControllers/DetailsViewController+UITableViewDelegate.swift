@@ -67,10 +67,8 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
                 cell.populate(userInfo: street)
             case .phone:
                 cell.populate(userInfo: phone)
-                cell.userInfo.isUserInteractionEnabled = true
             case .email:
                 cell.populate(userInfo: email)
-                cell.userInfo.isUserInteractionEnabled = true
             }
         }
         return cell
@@ -111,7 +109,9 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
             UIApplication.shared.canOpenURL(phoneCallURL) {
             UIApplication.shared.open(phoneCallURL, options: [:], completionHandler: nil)
         } else {
-            self.showAlert(title: Constansts.invalidPhoneNumberTitle, message: Constansts.invalidPhoneNumberMessage)
+            DispatchQueue.main.async {
+                self.showAlert(title: Constansts.invalidPhoneNumberTitle, message: Constansts.invalidPhoneNumberMessage)
+            }
         }
     }
 }
@@ -127,7 +127,9 @@ extension DetailsViewController: MFMailComposeViewControllerDelegate {
             
             present(mail, animated: true)
         } else {
-            self.showAlert(title: Constansts.noEmailTitle, message: Constansts.noEmailMessage)
+            DispatchQueue.main.async {
+                self.showAlert(title: Constansts.noEmailTitle, message: Constansts.noEmailMessage)
+            }
         }
     }
     

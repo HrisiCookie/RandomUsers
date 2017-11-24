@@ -25,7 +25,7 @@ class UsersViewController: UIViewController {
         requestData()
     }
     
-    internal func requestData() {
+    func requestData() {
         userService.requestUsers()
     }
     
@@ -57,7 +57,9 @@ extension UsersViewController: UserServiceDelegate {
     }
     
     func didRegisterFailure(withError: String) {
-        
+        DispatchQueue.main.async {
+            self.showAlert(title: "Error", message: withError)
+        }
     }
 }
 

@@ -32,7 +32,6 @@ extension UserService: HttpRequesterDelegate {
         let decoder = JSONDecoder()
         do {
             let response = try decoder.decode(ResponseModel.self, from: data)
-            print("Response: \(response)")
             if array.count == 0 {
                 array = response.results
             } else {
@@ -47,6 +46,6 @@ extension UserService: HttpRequesterDelegate {
     }
     
     func didGetFailed(with error: String) {
-        
+        self.delegate?.didRegisterFailure(withError: error)
     }
 }
