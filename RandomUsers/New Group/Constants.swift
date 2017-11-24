@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Constansts {
     static let APIURL = "https://randomuser.me/api/?results=10"
@@ -15,4 +16,6 @@ struct Constansts {
     static let noEmailMessage = "You cannot send email, because the device does not support Mail App."
     static let invalidPhoneNumberTitle = "Cannot make a call"
     static let invalidPhoneNumberMessage = "You cannot make a call, because this number is invalid."
+    
+    static let heightForHeader: CGFloat = 35
 }

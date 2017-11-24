@@ -15,6 +15,6 @@ extension UIColor {
     }
     
     func femaleBackground() -> UIColor {
-        return UIColor(red: 255.5/255.0, green: 244.0/255.0, blue: 226.0/255.0, alpha: 1)
+        return UIColor(red: 148.0/255.0, green: 251.0/255.0, blue: 159.0/255.0, alpha: 1)
     }
 }

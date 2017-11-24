@@ -20,12 +20,12 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 25
+        return Constansts.heightForHeader
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 25))
-        let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width - 30, height: 25))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: Constansts.heightForHeader))
+        let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width - 30, height: Constansts.heightForHeader))
         label.textColor = isMale ? UIColor().maleBackground() : UIColor().femaleBackground()
         label.font = UIFont.boldSystemFont(ofSize: 25)
         
