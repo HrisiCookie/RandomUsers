@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 struct Constansts {
+    // Get 10 users with each request
+    // so that the data to be loaded step by step
     static let APIURL = "https://randomuser.me/api/?results=10"
     
     static let noEmailTitle = "Cannot send email"

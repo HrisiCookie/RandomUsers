@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		142A00E597F46012C3478C7F /* Pods_RandomUsers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C281A124B6775D5F8891D85 /* Pods_RandomUsers.framework */; };
 		768E7A271FC5AD7100DC94AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A261FC5AD7100DC94AA /* AppDelegate.swift */; };
-		768E7A291FC5AD7100DC94AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A281FC5AD7100DC94AA /* ViewController.swift */; };
 		768E7A2C1FC5AD7100DC94AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 768E7A2A1FC5AD7100DC94AA /* Main.storyboard */; };
 		768E7A2F1FC5AD7100DC94AA /* RandomUsers.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A2D1FC5AD7100DC94AA /* RandomUsers.xcdatamodeld */; };
 		768E7A311FC5AD7100DC94AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 768E7A301FC5AD7100DC94AA /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 		768E7A461FC5B8DC00DC94AA /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A451FC5B8DC00DC94AA /* ResultsModel.swift */; };
 		768E7A481FC5B90E00DC94AA /* NameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A471FC5B90E00DC94AA /* NameModel.swift */; };
 		768E7A4A1FC5B95A00DC94AA /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A491FC5B95A00DC94AA /* LocationModel.swift */; };
-		768E7A4C1FC5B9AA00DC94AA /* IdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A4B1FC5B9AA00DC94AA /* IdModel.swift */; };
 		768E7A4E1FC5B9D600DC94AA /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A4D1FC5B9D600DC94AA /* PictureModel.swift */; };
 		768E7A4F1FC5BA9400DC94AA /* HttpRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A401FC5B0E600DC94AA /* HttpRequester.swift */; };
 		768E7A511FC6355300DC94AA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A501FC6355300DC94AA /* DetailsViewController.swift */; };
@@ -41,7 +39,6 @@
 		5C281A124B6775D5F8891D85 /* Pods_RandomUsers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomUsers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768E7A231FC5AD7100DC94AA /* RandomUsers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUsers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		768E7A261FC5AD7100DC94AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		768E7A281FC5AD7100DC94AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		768E7A2B1FC5AD7100DC94AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		768E7A2E1FC5AD7100DC94AA /* RandomUsers.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RandomUsers.xcdatamodel; sourceTree = "<group>"; };
 		768E7A301FC5AD7100DC94AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,7 +50,6 @@
 		768E7A451FC5B8DC00DC94AA /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		768E7A471FC5B90E00DC94AA /* NameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameModel.swift; sourceTree = "<group>"; };
 		768E7A491FC5B95A00DC94AA /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
-		768E7A4B1FC5B9AA00DC94AA /* IdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdModel.swift; sourceTree = "<group>"; };
 		768E7A4D1FC5B9D600DC94AA /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
 		768E7A501FC6355300DC94AA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		768E7A521FC641A200DC94AA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
@@ -111,7 +107,6 @@
 				768E7A3D1FC5B03100DC94AA /* ViewControllers */,
 				768E7A3B1FC5B01D00DC94AA /* Http */,
 				768E7A261FC5AD7100DC94AA /* AppDelegate.swift */,
-				768E7A281FC5AD7100DC94AA /* ViewController.swift */,
 				768E7A2A1FC5AD7100DC94AA /* Main.storyboard */,
 				768E7A301FC5AD7100DC94AA /* Assets.xcassets */,
 				768E7A321FC5AD7100DC94AA /* LaunchScreen.storyboard */,
@@ -158,7 +153,6 @@
 				768E7A451FC5B8DC00DC94AA /* ResultsModel.swift */,
 				768E7A471FC5B90E00DC94AA /* NameModel.swift */,
 				768E7A491FC5B95A00DC94AA /* LocationModel.swift */,
-				768E7A4B1FC5B9AA00DC94AA /* IdModel.swift */,
 				768E7A4D1FC5B9D600DC94AA /* PictureModel.swift */,
 			);
 			path = Models;
@@ -342,12 +336,10 @@
 				768E7A4A1FC5B95A00DC94AA /* LocationModel.swift in Sources */,
 				768E7A481FC5B90E00DC94AA /* NameModel.swift in Sources */,
 				768E7A461FC5B8DC00DC94AA /* ResultsModel.swift in Sources */,
-				768E7A291FC5AD7100DC94AA /* ViewController.swift in Sources */,
 				768E7A541FC641A200DC94AA /* UserTableViewCell.swift in Sources */,
 				76A4A4DA1FC867DD00488B2C /* UIViewControllerExtension.swift in Sources */,
 				76B63C4A1FC832B9004F5487 /* UsersViewController+UITableViewDelegate.swift in Sources */,
 				768E7A421FC5B40700DC94AA /* UsersViewController.swift in Sources */,
-				768E7A4C1FC5B9AA00DC94AA /* IdModel.swift in Sources */,
 				768E7A4F1FC5BA9400DC94AA /* HttpRequester.swift in Sources */,
 				76A992B51FC743BF003C237F /* UIImageViewExtension.swift in Sources */,
 				768E7A2F1FC5AD7100DC94AA /* RandomUsers.xcdatamodeld in Sources */,
