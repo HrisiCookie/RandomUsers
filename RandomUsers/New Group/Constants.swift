@@ -10,4 +10,9 @@ import Foundation
 
 struct Constansts {
     static let APIURL = "https://randomuser.me/api/?results=10"
+    
+    static let noEmailTitle = "Cannot send email"
+    static let noEmailMessage = "You cannot send email, because the device does not support Mail App."
+    static let invalidPhoneNumberTitle = "Cannot make a call"
+    static let invalidPhoneNumberMessage = "You cannot make a call, because this number is invalid."
 }

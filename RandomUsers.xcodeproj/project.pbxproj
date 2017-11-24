@@ -25,6 +25,7 @@
 		768E7A511FC6355300DC94AA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A501FC6355300DC94AA /* DetailsViewController.swift */; };
 		768E7A541FC641A200DC94AA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A521FC641A200DC94AA /* UserTableViewCell.swift */; };
 		768E7A551FC641A200DC94AA /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768E7A531FC641A200DC94AA /* UserTableViewCell.xib */; };
+		76A4A4DA1FC867DD00488B2C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4A4D91FC867DD00488B2C /* UIViewControllerExtension.swift */; };
 		76A992B51FC743BF003C237F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A992B41FC743BF003C237F /* UIImageViewExtension.swift */; };
 		76B63C451FC7AEEC004F5487 /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B63C431FC7AEEC004F5487 /* UserDetailsTableViewCell.swift */; };
 		76B63C461FC7AEEC004F5487 /* UserDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B63C441FC7AEEC004F5487 /* UserDetailsTableViewCell.xib */; };
@@ -56,6 +57,7 @@
 		768E7A501FC6355300DC94AA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		768E7A521FC641A200DC94AA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		768E7A531FC641A200DC94AA /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		76A4A4D91FC867DD00488B2C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		76A992B41FC743BF003C237F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		76B63C431FC7AEEC004F5487 /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		76B63C441FC7AEEC004F5487 /* UserDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				76A992B41FC743BF003C237F /* UIImageViewExtension.swift */,
 				76B63C471FC7B22C004F5487 /* UIColorExtension.swift */,
+				76A4A4D91FC867DD00488B2C /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				768E7A461FC5B8DC00DC94AA /* ResultsModel.swift in Sources */,
 				768E7A291FC5AD7100DC94AA /* ViewController.swift in Sources */,
 				768E7A541FC641A200DC94AA /* UserTableViewCell.swift in Sources */,
+				76A4A4DA1FC867DD00488B2C /* UIViewControllerExtension.swift in Sources */,
 				76B63C4A1FC832B9004F5487 /* UsersViewController+UITableViewDelegate.swift in Sources */,
 				768E7A421FC5B40700DC94AA /* UsersViewController.swift in Sources */,
 				768E7A4C1FC5B9AA00DC94AA /* IdModel.swift in Sources */,
@@ -485,7 +489,7 @@
 				DEVELOPMENT_TEAM = VB3227H635;
 				INFOPLIST_FILE = RandomUsers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HB.RandomUsers;
+				PRODUCT_BUNDLE_IDENTIFIER = HB.RandomUsersm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,7 +505,7 @@
 				DEVELOPMENT_TEAM = VB3227H635;
 				INFOPLIST_FILE = RandomUsers/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HB.RandomUsers;
+				PRODUCT_BUNDLE_IDENTIFIER = HB.RandomUsersm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

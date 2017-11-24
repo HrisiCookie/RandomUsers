@@ -25,7 +25,6 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 25))
-//        view.backgroundColor = isMale ? UIColor().maleBackground() : UIColor().femaleBackground()
         let label = UILabel(frame: CGRect(x: 15, y: 0, width: tableView.bounds.width - 30, height: 25))
         label.textColor = isMale ? UIColor().maleBackground() : UIColor().femaleBackground()
         label.font = UIFont.boldSystemFont(ofSize: 25)
@@ -112,9 +111,7 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
             UIApplication.shared.canOpenURL(phoneCallURL) {
             UIApplication.shared.open(phoneCallURL, options: [:], completionHandler: nil)
         } else {
-            let alert = UIAlertController(title: "Cannot make a call", message: "You cannot make a call, because this number is invalid.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            self.showAlert(title: Constansts.invalidPhoneNumberTitle, message: Constansts.invalidPhoneNumberMessage)
         }
     }
 }
@@ -130,9 +127,7 @@ extension DetailsViewController: MFMailComposeViewControllerDelegate {
             
             present(mail, animated: true)
         } else {
-            let alert = UIAlertController(title: "Cannot send email", message: "You cannot send email, because the device does not support Mail App.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            self.showAlert(title: Constansts.noEmailTitle, message: Constansts.noEmailMessage)
         }
     }
     
