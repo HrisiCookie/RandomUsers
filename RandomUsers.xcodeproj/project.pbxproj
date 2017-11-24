@@ -26,6 +26,7 @@
 		768E7A541FC641A200DC94AA /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768E7A521FC641A200DC94AA /* UserTableViewCell.swift */; };
 		768E7A551FC641A200DC94AA /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768E7A531FC641A200DC94AA /* UserTableViewCell.xib */; };
 		76A4A4DA1FC867DD00488B2C /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4A4D91FC867DD00488B2C /* UIViewControllerExtension.swift */; };
+		76A4A4DD1FC86EA100488B2C /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4A4DC1FC86EA100488B2C /* UserService.swift */; };
 		76A992B51FC743BF003C237F /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A992B41FC743BF003C237F /* UIImageViewExtension.swift */; };
 		76B63C451FC7AEEC004F5487 /* UserDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B63C431FC7AEEC004F5487 /* UserDetailsTableViewCell.swift */; };
 		76B63C461FC7AEEC004F5487 /* UserDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76B63C441FC7AEEC004F5487 /* UserDetailsTableViewCell.xib */; };
@@ -58,6 +59,7 @@
 		768E7A521FC641A200DC94AA /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		768E7A531FC641A200DC94AA /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		76A4A4D91FC867DD00488B2C /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		76A4A4DC1FC86EA100488B2C /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		76A992B41FC743BF003C237F /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		76B63C431FC7AEEC004F5487 /* UserDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		76B63C441FC7AEEC004F5487 /* UserDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		768E7A251FC5AD7100DC94AA /* RandomUsers */ = {
 			isa = PBXGroup;
 			children = (
+				76A4A4DB1FC86E8C00488B2C /* Services */,
 				76B63C4B1FC83331004F5487 /* Utils */,
 				76A992B31FC74399003C237F /* Extensions */,
 				768E7A3F1FC5B04000DC94AA /* Models */,
@@ -159,6 +162,14 @@
 				768E7A4D1FC5B9D600DC94AA /* PictureModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		76A4A4DB1FC86E8C00488B2C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				76A4A4DC1FC86EA100488B2C /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		76A992B31FC74399003C237F /* Extensions */ = {
@@ -342,6 +353,7 @@
 				768E7A2F1FC5AD7100DC94AA /* RandomUsers.xcdatamodeld in Sources */,
 				768E7A441FC5B45800DC94AA /* ResponseModel.swift in Sources */,
 				76B63C511FC83783004F5487 /* DetailsViewController+UITableViewDelegate.swift in Sources */,
+				76A4A4DD1FC86EA100488B2C /* UserService.swift in Sources */,
 				76B63C481FC7B22C004F5487 /* UIColorExtension.swift in Sources */,
 				768E7A4E1FC5B9D600DC94AA /* PictureModel.swift in Sources */,
 				768E7A271FC5AD7100DC94AA /* AppDelegate.swift in Sources */,

@@ -12,21 +12,21 @@ class UsersViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
-    var httpRequester: HttpRequester?
     var userData: ResultsModel?
     var array: [ResultsModel] = []
+    
+    var userService: UserService = UserService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        httpRequester = HttpRequester()
-        httpRequester?.delegate = self
+        userService.delegate = self
         configTableView()
         requestData()
     }
     
     internal func requestData() {
-        httpRequester?.get(from: Constansts.APIURL)
+        userService.requestUsers()
     }
     
     func showNextVC(userData: ResultsModel) {
@@ -48,27 +48,16 @@ class UsersViewController: UIViewController {
     }
 }
 
-// MARK: - HttpRequesterDelegate
-extension UsersViewController: HttpRequesterDelegate {
-    func didGetSuccess(with data: Data) {
-        let decoder = JSONDecoder()
-        do {
-            let response = try decoder.decode(ResponseModel.self, from: data)
-            print("Response: \(response)")
-            if array.count == 0 {
-                array = response.results
-            } else {
-                array.append(contentsOf: response.results)
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        } catch {
-            print("ERROR: Can't convert data from JSON")
-            print("Error: \(error.localizedDescription)")
+extension UsersViewController: UserServiceDelegate {
+    func didRegisterSuccess() {
+        self.array = userService.array
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     
-    func didGetFailed(with error: String) {
+    func didRegisterFailure(withError: String) {
+        
     }
 }
+
