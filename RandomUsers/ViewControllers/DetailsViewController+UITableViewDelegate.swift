@@ -83,18 +83,18 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
             case .phone:
                 switch indexPath.row {
                 case 0:
-                    print("Pressed phone")
+                    if let phone = userData?.phone {
+                        callNumber(phoneNumber: phone)
+                    }
                 default:
                     break
                 }
             case .email:
                 switch indexPath.row {
                 case 0:
-                    print("Email: \(userData?.email)")
-                    if let url = URL(string: "mailto:\(userData?.email)") {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    if let email = userData?.email {
+                        sendEmail(withEmail: email)
                     }
-                    print("Pressed email")
                 default:
                     break
                 }
@@ -103,4 +103,41 @@ extension DetailsViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    
+    func callNumber(phoneNumber: String) {
+        let result = String(phoneNumber.characters.filter { String($0).rangeOfCharacter(from: CharacterSet(charactersIn: "0123456789")) != nil })
+        
+        let urlString = "tel://\(result)"
+        if let phoneCallURL = URL(string: urlString),
+            UIApplication.shared.canOpenURL(phoneCallURL) {
+            UIApplication.shared.open(phoneCallURL, options: [:], completionHandler: nil)
+        } else {
+            let alert = UIAlertController(title: "Cannot make a call", message: "You cannot make a call, because this number is invalid.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
 }
+
+// MARK: - MFMailComposeViewControllerDelegate
+extension DetailsViewController: MFMailComposeViewControllerDelegate {
+    func sendEmail(withEmail email: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+            
+            present(mail, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Cannot send email", message: "You cannot send email, because the device does not support Mail App.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+}
+
