@@ -11,23 +11,16 @@ import SDWebImage
 
 class UserTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet private weak var firstNameLabel: UILabel!
+    @IBOutlet private weak var lastNameLabel: UILabel!
+    @IBOutlet private weak var cityLabel: UILabel!
+    @IBOutlet private weak var userImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         userImage.makeImageCircle()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     func populate(firstName: String, lastName: String, image: String, city: String) {
         self.firstNameLabel.text = firstName
         self.lastNameLabel.text = lastName

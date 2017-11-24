@@ -9,7 +9,6 @@
 import Foundation
 
 enum HttpMethod: String {
-    case post = "POST"
     case get = "GET"
 }
 
@@ -18,9 +17,6 @@ class HttpRequester {
     
     func get(from url: String) {
         makeRequest(to: url, with: .get, andBody: nil)
-    }
-    func post(to url: String, with body: Data) {
-        makeRequest(to: url, with: .post, andBody: body)
     }
     
     func makeRequest(to urlString: String, with httpMethod: HttpMethod, andBody body: Data? ) {
@@ -86,8 +82,6 @@ class HttpRequester {
         switch httpMethod {
         case .get:
             delegate?.didGetFailed(with: error)
-        case .post:
-            delegate?.didPostFailed(with: error)
         }
     }
     
@@ -95,8 +89,6 @@ class HttpRequester {
         switch httpMethod {
         case .get:
             delegate?.didGetSuccess(with: data)
-        case .post:
-            delegate?.didPostSuccess(with: data)
         }
     }
     
@@ -117,7 +109,4 @@ class HttpRequester {
 protocol HttpRequesterDelegate {
     func didGetSuccess(with data: Data)
     func didGetFailed(with error: String)
-    
-    func didPostSuccess(with data: Data)
-    func didPostFailed(with error: String)
 }

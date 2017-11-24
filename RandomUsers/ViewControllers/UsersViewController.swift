@@ -9,34 +9,24 @@
 import UIKit
 
 class UsersViewController: UIViewController {
+    
+    @IBOutlet private weak var tableView: UITableView!
+    
     var httpRequester: HttpRequester?
     var userData: ResultsModel?
     var array: [ResultsModel] = []
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.estimatedRowHeight = 90
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
         httpRequester = HttpRequester()
         httpRequester?.delegate = self
-        
-
-        self.tableView.register(UINib(nibName:"\(UserTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
-        
-        let url = "https://randomuser.me/api/?results=10"
-        httpRequester?.get(from: url)
+        configTableView()
+        requestData()
+    }
+    
+    internal func requestData() {
+        httpRequester?.get(from: Constansts.APIURL)
     }
     
     func showNextVC(userData: ResultsModel) {
@@ -45,47 +35,20 @@ class UsersViewController: UIViewController {
         detailsVC.userData = userData
         navigationController?.pushViewController(detailsVC, animated: true)
     }
-}
-
-extension UsersViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("Count: \(array.count)")
-        return array.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let userCell = tableView.dequeueReusableCell(withIdentifier: "\(UserTableViewCell.self)", for: indexPath) as? UserTableViewCell
-        guard let cell = userCell else { return UITableViewCell() }
+    // private methods
+    private func configTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
         
-        let first = array[indexPath.row].name.first.uppercased()
-        let last = array[indexPath.row].name.last.uppercased()
-        let image = array[indexPath.row].picture.thumbnail
-        let city = array[indexPath.row].location.city.capitalized
-
-        cell.populate(firstName: first, lastName: last, image: image, city: city)
+        tableView.estimatedRowHeight = 90
+        tableView.rowHeight = UITableViewAutomaticDimension
         
-        if indexPath.row == self.array.count - 1 {
-            if array.count < 100 {
-                let url = "https://randomuser.me/api/?results=10"
-                httpRequester?.get(from: url)
-            }
-        }
-
-        return cell
+        self.tableView.register(UINib(nibName:"\(UserTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(UserTableViewCell.self)")
     }
 }
 
-extension UsersViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currentUser = array[indexPath.row]
-        showNextVC(userData: currentUser)
-    }
-}
-
+// MARK: - HttpRequesterDelegate
 extension UsersViewController: HttpRequesterDelegate {
     func didGetSuccess(with data: Data) {
         let decoder = JSONDecoder()
@@ -107,16 +70,5 @@ extension UsersViewController: HttpRequesterDelegate {
     }
     
     func didGetFailed(with error: String) {
-        
     }
-    
-    func didPostSuccess(with data: Data) {
-        
-    }
-    
-    func didPostFailed(with error: String) {
-        
-    }
-    
-    
 }

@@ -19,27 +19,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0L-9q-ztb">
-                        <rect key="frame" x="8" y="8" width="304" height="28"/>
+                        <rect key="frame" x="15" y="8" width="297" height="28"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWU-k3-nNa">
-                        <rect key="frame" x="8" y="8" width="304" height="28"/>
-                        <connections>
-                            <action selector="onClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="xYb-lH-NEV"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="C0L-9q-ztb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="97e-7x-S4b"/>
-                    <constraint firstItem="rWU-k3-nNa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Kcg-7U-aAh"/>
+                    <constraint firstItem="C0L-9q-ztb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="97e-7x-S4b"/>
                     <constraint firstAttribute="bottom" secondItem="C0L-9q-ztb" secondAttribute="bottom" constant="8" id="OUO-mp-P4G"/>
                     <constraint firstAttribute="trailing" secondItem="C0L-9q-ztb" secondAttribute="trailing" constant="8" id="RWe-WP-hLY"/>
-                    <constraint firstItem="rWU-k3-nNa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cmi-Lx-bPY"/>
-                    <constraint firstAttribute="bottom" secondItem="rWU-k3-nNa" secondAttribute="bottom" constant="8" id="oHs-9l-h5v"/>
                     <constraint firstItem="C0L-9q-ztb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="rZj-yZ-gWi"/>
-                    <constraint firstAttribute="trailing" secondItem="rWU-k3-nNa" secondAttribute="trailing" constant="8" id="yBj-aS-SqZ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Users-->
+        <!--USERS-->
         <scene sceneID="yPe-Lg-kEr">
             <objects>
                 <viewController storyboardIdentifier="UsersViewController" id="38V-EO-Ea1" customClass="UsersViewController" customModule="RandomUsers" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a7V-SW-CQc"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Users" id="nrj-Mt-850"/>
+                    <navigationItem key="navigationItem" title="USERS" id="nrj-Mt-850"/>
                     <connections>
                         <outlet property="tableView" destination="gHG-Tq-G55" id="F66-of-HfH"/>
                     </connections>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="160.80000000000001" y="-90.404797601199405"/>
         </scene>
-        <!--User Details-->
+        <!--USER DETAILS-->
         <scene sceneID="HCO-qx-YDn">
             <objects>
-                <viewController storyboardIdentifier="DetailsViewController" title="User Details" id="Vg6-dD-BX8" customClass="DetailsViewController" customModule="RandomUsers" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" title="USER DETAILS" id="Vg6-dD-BX8" customClass="DetailsViewController" customModule="RandomUsers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34P-Fa-HRn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -106,7 +106,7 @@
                                     <constraint firstItem="c2D-RL-bDP" firstAttribute="top" secondItem="45a-d9-RDE" secondAttribute="top" constant="10" id="vij-Ro-6DY"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aat-q1-Dis">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aat-q1-Dis">
                                 <rect key="frame" x="0.0" y="205" width="375" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -126,7 +126,7 @@
                     <connections>
                         <outlet property="firsName" destination="GFc-4c-Wbo" id="n0T-F3-TkO"/>
                         <outlet property="lastName" destination="qrU-CK-MKt" id="aMe-fi-Bre"/>
-                        <outlet property="mainUserInfoView" destination="lA8-9A-whp" id="Imc-Su-9bC"/>
+                        <outlet property="mainUserInfoView" destination="45a-d9-RDE" id="uVG-z9-4bg"/>
                         <outlet property="tableView" destination="aat-q1-Dis" id="dJe-qt-9gv"/>
                         <outlet property="titleLabel" destination="i0y-X5-fWu" id="1Tc-Lp-Na7"/>
                         <outlet property="userImage" destination="c2D-RL-bDP" id="Wqp-zA-V9U"/>

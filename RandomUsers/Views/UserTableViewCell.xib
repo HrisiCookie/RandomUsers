@@ -20,29 +20,29 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekH-yx-HTM">
-                        <rect key="frame" x="18" y="10.5" width="70" height="70"/>
+                        <rect key="frame" x="18" y="-4.5" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="70" id="Cek-D4-pLh"/>
-                            <constraint firstAttribute="height" constant="70" id="djo-kA-9wq"/>
+                            <constraint firstAttribute="width" constant="100" id="Cek-D4-pLh"/>
+                            <constraint firstAttribute="height" constant="100" id="djo-kA-9wq"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="o61-Fi-8Zw">
-                        <rect key="frame" x="98" y="12" width="164" height="67.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="o61-Fi-8Zw">
+                        <rect key="frame" x="128" y="12" width="134" height="67.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bPY-d9-ywh">
-                                <rect key="frame" x="0.0" y="0.0" width="164" height="20.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="134" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.2473486075129534" green="0.2473486075129534" blue="0.2473486075129534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fox-SB-oKU">
-                                <rect key="frame" x="0.0" y="23.5" width="164" height="20.5"/>
+                                <rect key="frame" x="0.0" y="23.5" width="134" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="0.24734860750000001" green="0.24734860750000001" blue="0.24734860750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8p5-I7-gGq">
-                                <rect key="frame" x="0.0" y="47" width="164" height="20.5"/>
+                                <rect key="frame" x="0.0" y="47" width="134" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.56866671954314718" green="0.56866671954314718" blue="0.56866671954314718" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
